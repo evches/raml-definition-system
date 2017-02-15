@@ -3313,5 +3313,245 @@ var Universes={
         }
       }
     }
+  },
+  "UniverseDeviceProfiles": {
+    "Api": {
+      "name": "Api",
+      "properties": {
+        "device-profile": {
+          "name": "device-profile"
+        }
+      }
+    },
+    "ValueType": {
+      "name": "ValueType",
+      "properties": {}
+    },
+    "StringType": {
+      "name": "StringType",
+      "properties": {}
+    },
+    "AnyType": {
+      "name": "AnyType",
+      "properties": {}
+    },
+    "NumberType": {
+      "name": "NumberType",
+      "properties": {}
+    },
+    "IntegerType": {
+      "name": "IntegerType",
+      "properties": {}
+    },
+    "NullType": {
+      "name": "NullType",
+      "properties": {}
+    },
+    "TimeOnlyType": {
+      "name": "TimeOnlyType",
+      "properties": {}
+    },
+    "DateOnlyType": {
+      "name": "DateOnlyType",
+      "properties": {}
+    },
+    "DateTimeOnlyType": {
+      "name": "DateTimeOnlyType",
+      "properties": {}
+    },
+    "DateTimeType": {
+      "name": "DateTimeType",
+      "properties": {}
+    },
+    "FileType": {
+      "name": "FileType",
+      "properties": {}
+    },
+    "BooleanType": {
+      "name": "BooleanType",
+      "properties": {}
+    },
+    "UriTemplate": {
+      "name": "UriTemplate",
+      "properties": {}
+    },
+    "StatusCodeString": {
+      "name": "StatusCodeString",
+      "properties": {}
+    },
+    "RelativeUriString": {
+      "name": "RelativeUriString",
+      "properties": {}
+    },
+    "FullUriTemplateString": {
+      "name": "FullUriTemplateString",
+      "properties": {}
+    },
+    "FixedUriString": {
+      "name": "FixedUriString",
+      "properties": {}
+    },
+    "ContentType": {
+      "name": "ContentType",
+      "properties": {}
+    },
+    "MarkdownString": {
+      "name": "MarkdownString",
+      "properties": {}
+    },
+    "SchemaString": {
+      "name": "SchemaString",
+      "properties": {}
+    },
+    "ConfigTemplate": {
+      "name": "ConfigTemplate",
+      "properties": {
+        "name": {
+          "name": "name"
+        },
+        "display_name": {
+          "name": "display_name"
+        },
+        "hide": {
+          "name": "hide"
+        },
+        "device_component_name": {
+          "name": "device_component_name"
+        },
+        "template_uuid": {
+          "name": "template_uuid"
+        }
+      }
+    },
+    "DeviceProfileOutput": {
+      "name": "DeviceProfileOutput",
+      "properties": {
+        "resources": {
+          "name": "resources"
+        },
+        "config_templates": {
+          "name": "config_templates"
+        }
+      }
+    },
+    "ParamValue": {
+      "name": "ParamValue",
+      "properties": {
+        "str_value": {
+          "name": "str_value"
+        },
+        "num_value": {
+          "name": "num_value"
+        },
+        "bool_value": {
+          "name": "bool_value"
+        },
+        "obj_value": {
+          "name": "obj_value"
+        }
+      }
+    },
+    "GlobalParameter": {
+      "name": "GlobalParameter",
+      "properties": {
+        "name": {
+          "name": "name"
+        },
+        "description": {
+          "name": "description"
+        },
+        "value": {
+          "name": "value"
+        }
+      }
+    },
+    "Parameter": {
+      "name": "Parameter",
+      "properties": {
+        "name": {
+          "name": "name"
+        },
+        "description": {
+          "name": "description"
+        },
+        "type": {
+          "name": "type"
+        },
+        "default_value": {
+          "name": "default_value"
+        }
+      }
+    },
+    "RestApi": {
+      "name": "RestApi",
+      "properties": {
+        "service_name": {
+          "name": "service_name"
+        },
+        "method": {
+          "name": "method"
+        },
+        "uri": {
+          "name": "uri"
+        },
+        "http_body": {
+          "name": "http_body"
+        }
+      }
+    },
+    "Resource": {
+      "name": "Resource",
+      "properties": {
+        "resource_name": {
+          "name": "resource_name"
+        },
+        "input_resources": {
+          "name": "input_resources"
+        },
+        "rest_api": {
+          "name": "rest_api"
+        },
+        "json_value": {
+          "name": "json_value"
+        }
+      }
+    },
+    "Workflow": {
+      "name": "Workflow",
+      "properties": {
+        "workflow_name": {
+          "name": "workflow_name"
+        },
+        "parameters": {
+          "name": "parameters"
+        },
+        "resources": {
+          "name": "resources"
+        },
+        "output": {
+          "name": "output"
+        }
+      }
+    },
+    "DeviceProfileBase": {
+      "name": "DeviceProfileBase",
+      "properties": {
+        "parent_profile": {
+          "name": "parent_profile"
+        },
+        "excluded_workflows": {
+          "name": "excluded_workflows"
+        },
+        "redefined_workflows": {
+          "name": "redefined_workflows"
+        },
+        "global_parameters": {
+          "name": "global_parameters"
+        },
+        "workflows": {
+          "name": "workflows"
+        }
+      }
+    }
   }
 };export=Universes

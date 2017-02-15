@@ -1285,12 +1285,19 @@ export var getUniverse:UniverseProvider = (()=>{
 
     var x:any = (key:string)=>{
 
-        if(universes[key]){
+        if(universes[key]) {
             return universes[key];
         }
 
         var src = jsonDefinitions[key];
-        var universe = ts2def.toDefSystem(src,(key=="RAML08")?unDesc["Universe08"]:unDesc["Universe10"]);
+        var unDescForKey = null;
+        switch(key) {
+          case "RAML08": unDescForKey = unDesc["Universe08"]; break;
+          case "RAML10": unDescForKey = unDesc["Universe10"]; break;
+          case "device-profiles": unDescForKey = unDesc["UniverseDeviceProfiles"]; break;
+          default: throw "No universe available for key " + key;
+        }
+        var universe = ts2def.toDefSystem(src, unDescForKey);
         if(universe) {
             universe.setUniverseVersion(key);
             universes[key] = universe;

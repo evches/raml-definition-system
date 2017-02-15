@@ -2,11 +2,13 @@ import ts=require("ts-structure-parser")
 
 export interface JSONDump{
     RAML08:ts.Module,
-    RAML10:ts.Module
+    RAML10:ts.Module,
+    "device-profiles":ts.Module
 }
 export var universeDumps:JSONDump={
     RAML08: toModule(require("./RAML08")),
-    RAML10: toModule(require("./RAML10"))
+    RAML10: toModule(require("./RAML10")),
+    "device-profiles": toModule(require("./device-profiles"))
 }
 
 function toModule(arr:any[]):any{

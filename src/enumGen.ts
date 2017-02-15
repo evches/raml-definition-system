@@ -7,32 +7,50 @@ import def=require("./definitionSystem")
 function generateJSONDumpOfDefSystem( ){
     var universe10 = def.getUniverse("RAML10")
     var universe08 =def.getUniverse("RAML08")
+    var universeDeviceProfiles = def.getUniverse("device-profiles")
 
-    var Universe10={};
-    universe10.types().forEach(x=>{
-        var props={};
-        x.allProperties().forEach(y=>props[y.nameId()]={name:y.nameId()});
-        (<def.NodeClass>x).customProperties().forEach(y=>props[y.nameId()]={name:y.nameId(),range:y.range().nameId(),domain:y.domain().nameId()});
-        Universe10[x.nameId()]={
+    function processUniverse10(u) {
+        const rt = {};
+        u.types().forEach(x=>{
+            const props={};
+            x.allProperties().forEach(y=>props[y.nameId()]={name:y.nameId()});
+            (<def.NodeClass>x).customProperties().forEach(y=>props[y.nameId()]={name:y.nameId(),range:y.range().nameId(),domain:y.domain().nameId()});
+            rt[x.nameId()]={
+                name:x.nameId(),
+                properties:props
+            }
+        });
+        return rt;
+    }
 
-            name:x.nameId(),
+    var Universe10 = processUniverse10(universe10);
 
-            properties:props
-        }
-    })
-    var Universe08={};
-    universe08.types().forEach(x=>{
-        var props={};
-        x.allProperties().forEach(y=>props[y.nameId()]={name:y.nameId(),range:y.range().nameId(),domain:y.domain().nameId()});
-        (<def.NodeClass>x).customProperties().forEach(y=>props[y.nameId()]={name:y.nameId()});
-        Universe08[x.nameId()]={
+    function processUniverse8(u) {
+      var rt = {}
+      u.types().forEach(x=>{
+          var props={};
+          x.allProperties().forEach(y=>props[y.nameId()]={name:y.nameId(),range:y.range().nameId(),domain:y.domain().nameId()});
+          (<def.NodeClass>x).customProperties().forEach(y=>props[y.nameId()]={name:y.nameId()});
+          rt[x.nameId()]={
 
-            name:x.nameId(),
+              name:x.nameId(),
 
-            properties:props
-        }
-    })
-    var Universes={Universe08:Universe08,Universe10:Universe10}
+              properties:props
+          }
+      })
+      return rt;
+    }
+
+    var Universe08 = processUniverse8(universe08)
+
+    var UniverseDeviceProfiles = processUniverse10(universeDeviceProfiles)
+
+
+    var Universes={
+      Universe08: Universe08,
+      Universe10: Universe10,
+      UniverseDeviceProfiles: UniverseDeviceProfiles
+    }
     fs.writeFileSync( path.join(__dirname, '../src/universe.ts' ), "var Universes="+JSON.stringify( Universes, null, 2 )+";export=Universes")
 }
 generateJSONDumpOfDefSystem();
