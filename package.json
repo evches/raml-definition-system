@@ -21,7 +21,7 @@
   "typings": "dist/definitionSystem.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/raml-org/raml-definition-system.git"
+    "url": "https://github.com/evches/raml-definition-system.git"
   },
   "keywords": [
     "raml",
@@ -29,10 +29,10 @@
     "typesystem",
     "specification"
   ],
-  "homepage": "https://github.com/raml-org/raml-definition-system",
+  "homepage": "https://github.com/evches/raml-definition-system",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/raml-org/raml-definition-system/issues"
+    "url": "https://github.com/evches/raml-definition-system/issues"
   },
   "devDependencies": {
     "typescript": "^1.8.9",

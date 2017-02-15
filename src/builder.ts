@@ -7,7 +7,9 @@ var locations = {
 
     "RAML10" : "./spec-1.0/api.ts",
 
-    "RAML08" : "./spec-0.8/api.ts"
+    "RAML08" : "./spec-0.8/api.ts",
+
+    "device-profiles" : "./device-profile-spec-1.0/api.ts"
 
 };
 var defPath=path.resolve(__dirname,"../raml-definition/")
@@ -51,3 +53,4 @@ function toModulesCollection(mod:any, map:any={},arr:any[]=[]):any[]{
 
 getDecl("RAML08");
 getDecl("RAML10");
+getDecl("device-profiles");
