@@ -3536,6 +3536,12 @@ var Universes={
     "DeviceProfileBase": {
       "name": "DeviceProfileBase",
       "properties": {
+        "uuid": {
+          "name": "uuid"
+        },
+        "name": {
+          "name": "name"
+        },
         "parent_profile": {
           "name": "parent_profile"
         },
