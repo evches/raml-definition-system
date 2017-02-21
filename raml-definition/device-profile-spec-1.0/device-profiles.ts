@@ -215,6 +215,11 @@ export class DeviceProfileBase {
         5. You can add any number of new workflows into the sub-profile.`
   )]
 
+  uuid: string
+  $uuid = [ MetaModel.key() ]
+
+  name: string
+
   parent_profile: string
   $parent_profile = [ MetaModel.description("Name of the device-profile which is being inherited") ]
 

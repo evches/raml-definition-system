@@ -4,4 +4,5 @@ import DeviceProfiles = require('./device-profiles');
 
 export class Api {
   "device-profile": DeviceProfiles.DeviceProfileBase[]
+  "$device-profile" = [ MetaModel.embeddedInMaps() ]
 }
